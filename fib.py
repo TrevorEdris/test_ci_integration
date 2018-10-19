@@ -1,9 +1,15 @@
 import argparse
 
 
+def is_valid_input(n):
+    if not isinstance(n, int) or isinstance(n, bool) or n < 0:
+        return False
+    return True
+
+
 def fib(n):
     # bool types in python can be evaulated as ints apparently
-    if not isinstance(n, int) or n < 0 or isinstance(n, bool):
+    if not is_valid_input(n):
         return None
     if n == 0 or n == 1:
         return n
